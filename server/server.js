@@ -14,5 +14,6 @@ app.use(express.static(publicPath));
 
 app.listen(port, () => {
     console.log(`Server is up on ${port}`);
+    console.log("WE MADE IT");
 
 });
