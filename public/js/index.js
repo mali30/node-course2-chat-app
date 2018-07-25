@@ -5,12 +5,6 @@
     // listening to new events
     socket.on('connect' ,function () {
         console.log('Connected to server');
-
-
-        socket.emit('createMessage',{
-            to: 'jimjohn@yahoo.com',
-            text: 'This is from jimmy john'
-        });
     });
     
     // listening to disconnect events

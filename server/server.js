@@ -16,24 +16,16 @@ var io = socketIO(server);
 io.on('connection' , function(socket) {
     console.log('New user connected');
 
-    
-    // emits event that will be show in browser
-    socket.emit('newMessage',{
-        from: 'MOEG',
-        text: 'What it do flight crew',
-        createdAt: 2
-    });
-
-    socket.emit('newMessage',{
-        from: 'Ali',
-        text: 'This is ali',
-        createdAt: 2
-    });
-
-
     // going from client to server
     socket.on('createMessage',(newMessage) =>{
         console.log("New message to server ", newMessage);
+        // emits an event to every connection
+        io.emit('newMessage' , {
+            from:newMessage.from,
+            text:newMessage.text,
+            // specify time so it stops time spoofing from client
+            createdAt: new Date().getTime()
+        });
     })
 
     // will show when you disconnect from the server
