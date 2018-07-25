@@ -11,20 +11,7 @@
 
     <!-- loading in the libary -->
     <script src="/socket.io/socket.io.js"> </script>
-    <script> 
-    // creates connection to listen to data and send to server
-    // critical for communication
-        var socket = io();
-        
-        // listening to new events
-        socket.on('connect' , () => {
-            console.log('Connected to server');
-        });
-        
-        // listening to disconnect events
-        socket.on('disconnect' , () =>{
-            console.log('Disconnected from server')
-        });
+    <script src="./js/index.js"> 
     </script>
 </body>
 </html>
